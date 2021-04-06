@@ -1,0 +1,3860 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>5680003</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11"  />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/my-bill.css">
+    <script src="js/vendor/angular.min.js"></script>
+</head>
+<body ng-app="myBill" ng-controller="SubsDetails" dir-esc="showBOX">
+<![if lt IE 9]>
+<div id="div-err"></div>
+<script src="js/ie.js"></script>
+<![endif]>
+<msg-box ng-show="MB" class="popus" on-close="closeMB()"  msgdata="msg_orig"></msg-box>
+<add-msg ng-show="AMB" class="popus" on-close="closeAMB()" addinfo="addinfo"></add-msg>
+<article class="wraper"  role="main" >
+    <header class="hdr-cont">
+        <section class="hdr-row">
+           <h1> שלום, <strong> זינדאני גולן </strong>
+להלן חשבונית של   21/02/2021 - 22/01/2021 שמספרה  2235285644
+        </h1></section>
+    </header>
+    <section class="cust-det">
+        <div class="mbl-collaps-button lbl-toggle" onclick="displayData()" role="heading" aria-level="2">
+            <input id="collapsible" class="toggle" type="checkbox" >
+            <label for="collapsible" class="lbl-toggle-txt">פרטי הלקוח</label>
+            <label for="collapsible" id="lbl-toggle-arr" class="lbl-toggle-arr">&#10095;</label>
+        </div>
+        <section class="wrap-cust-det">
+            <div class="wrap-hdr">
+                <article class="cust-det-hdr" >
+                    <p class="txt-prv" role="heading" aria-level="3">פרטי הלקוח</p>
+                </article>
+            </div>
+            <article id="cust-det-data" class="cust-det-data ">
+                <div class="cust-det-ttl">
+                    <div class="cust-det-col col-3-1">
+                        <div class="cust-det-row">
+                            <div class="cust-det-cell  col-sml">
+                                מספר לקוח
+                            </div>
+                            <div class="cust-det-cell col-lrg bld">
+                                5680003
+                            </div>
+                                      </div>
+                        <div class="cust-det-row">
+                            <div class="cust-det-cell  col-sml">
+                                ת''ז / עוסק מורשה
+                            </div>
+                            <div class="cust-det-cell col-lrg bld">
+                                27962109
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cust-det-col col-3-1">
+                        <div class="cust-det-row">
+                            <div class="cust-det-cell col-sml">
+                                הפקת החשבונית
+                            </div>
+                            <div class="cust-det-cell col-lrg bld">
+                                21/02/2021
+                            </div>
+                        </div>
+                        <div class="cust-det-row">
+                            <div class="cust-det-cell col-sml">
+                                אופן משלוח
+                            </div>
+                            <div class="cust-det-cell col-lrg bld">
+                                דואר אלקטרוני
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cust-det-col col-3-2">
+                        <div class="cust-det-row">                          
+                              <div class="cust-det-cell col-sml-l">
+                                כתובת דוא''ל
+                            </div>
+                            <div class="cust-det-cell col-lrg-l bld">
+                                shacharzindany@gmail.com
+                            </div>
+                       </div>
+                        <div class="cust-det-row">
+                            <div class="cust-det-cell col-sml-l">
+                                יחוייב באמצעות
+                            </div>
+                            <div class="cust-det-cell col-lrg-l bld">
+                                הוראת קבע
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </section>
+    <section class="bll-hdr ng-cloak">
+        <div class="bll-det-hdr">
+            <span class="bill-txt-prv" role="heading" aria-level="4">פרטי החשבונית</span>
+            <div class="msgbox-mob visibledevice">
+                <div class="msgbox-wrp ">
+                    <a ng-if="msg" ng-click="showMB()">
+                        <div ng-class="{true:'count-1', false:'count-2'}[msgnum < 10]" data-msgvalue="{{msgnum}}">{{ msgnum}} </div>
+                        <div ng-class="{true:'msgbox-m-1', false:'msgbox-m-2'}[msgnum < 10]"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="bll-row">
+            <div class="bill-data-row">
+                <div class="bll-period">
+                    <div class="bll-period-data">
+                        <span class="lbl-hdr-cll ">תקופת החשבונית</span>
+                        <span class="bll-prd-cell bld">21/02/2021 - 22/01/2021</span>
+                    </div>
+</div>
+                <div class="lbl-hdr" >
+                    <label class="lbl-hdr-cll" for="selectO">הצג חשבון לפי</label>
+                    <section class="bll-prd-select">
+                         <select id="selectO" tabindex="1"
+                                ng-model="billselected"
+                                name="bills" ng-options="bill.subsciber for bill in billlist"
+                                ng-init="start()"
+                                ng-change="getdetails(billselected.index)">
+                        </select>
+                    </section>
+                </div>
+              <section class="ttl-col ng-cloak">
+                    <div class="ttl-cell">
+                        <div class="ttl-grp">
+                            <div class="lbl-hdr-s bld">סה''כ כולל מע''מ</div>
+                            <div class="ttl-cell bll-prd-ttl">&#8362; {{ billselected.total }}</div>
+                        </div>
+                        <div class="ttl-cell-line">
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+</section>
+<section class="main-content-nav visibledevice" id="divnav">
+    <nav class="cell-nav active" onclick="getData('pay')" id="pay"> פירוט חיובים</nav>
+    <nav class="cell-nav" onclick="getData('use')" id="use">פירוט השימושים</nav>
+    <nav class="cell-nav" onclick="getData('act')" id="act">פעולות ומידע בשירות עצמי</nav>
+</section>
+<section class="main-content" >
+        <section class="usage visibledevice" id="usage" ng-cloak>
+            <div class="use-txt hdr-c visibledesktop ">פירוט השימושים</div>
+            <div class="usage_btns" role="navigation" ng-cloak>
+                <div id="usein" class="use-btn btn-in slt-btn" tabindex="2" role="button"
+                     dir-enter="inn-{{billselected.index}}"
+                     ng-class="{true:'activeB', false:'disactiveB'}[indUseIn > 0]"
+                     ng-on-click="showIn('in',billselected.index )">                    בארץ
+                </div>
+                <div id="useout" class="use-btn btn-out" tabindex="3" role="button"
+                     dir-enter="out-{{billselected.index}}"
+                     ng-class="{true:'activeB', false:'disactiveB'}[indUseOUT > 0]"
+                     ng-on-click="showIn('out', billselected.index)">
+                    בחו''ל
+                </div>
+            </div>
+            <div class="usage_swch" ng-cloak>
+                <label class="swch-lbl">:תצוגה באחוזים</label>
+                <input type="checkbox" id="switch1" class="switch" tabindex="4"
+                       ng-model="displayAbs.value" ng-init="displayAbs.value=true" />
+                <label for="switch1" class="toggle-swc" dir-enter="displayAbs"></label>
+            </div>
+            <div class="cntr" ng-cloak>
+                <div ng-if="mainBill" class="fld-usage">
+                    <div  ng-repeat="useditem in objectToDisplay" class="usg-data">
+                        <div class="usage_row_ttl">
+                            <div class="chart-ttl bld">מנוי {{ useditem.sub }}  </div>
+                        </div>
+                        <div ng-if="useditem.used[0].relValGB!=''" class="usage_row cht-line">
+                            <label class="usage_data">חבילת גלישה</label>
+                            <div class="lineChart" id="first1" data-value="{{ useditem.used[0].relValGB }}" data-text="#0B69BA"></div>
+                            <label ng-if="displayAbs.value==false" class="usage_data_val"> {{ useditem.used[0].relValGB }}%</label>
+                            <label  ng-if="displayAbs.value==true" class="usage_data_val">{{ useditem.used[0].absValGB }} GB</label>
+                        </div>
+                        <div ng-if="useditem.used[0].relValMin!=''" class="usage_row cht-line">
+                            <label class="usage_data">דקות שיחה</label>
+                            <div class="lineChart" id="first2" data-value="{{ useditem.used[0].relValMin }}" data-text="#E1248E"></div>
+                            <label ng-if="displayAbs.value==false" class="usage_data_val"> {{ useditem.used[0].relValMin }}%</label>
+                            <label  ng-if="displayAbs.value==true" class="usage_data_val">{{ useditem.used[0].absValMin }}</label>
+                        </div>
+                        <div ng-if="useditem.used[0].relValSms!=''"  class="usage_row cht-line">
+                            <label class="usage_data">SMS</label>
+                            <div class="lineChart" id="first3" data-value="{{ useditem.used[0].relValSms }}" data-text="#0B69BA"></div>
+                            <label ng-if="displayAbs.value==false" class="usage_data_val"> {{ useditem.used[0].relValSms }}%</label>
+                            <label  ng-if="displayAbs.value==true" class="usage_data_val">{{ useditem.used[0].absValSms }}</label>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="!mainBill" ng-cloak>
+                    <div  ng-repeat="useditem in objectToDisplay">
+                        <div ng-if="useditem.used[0].relValGB!=''">
+                            <div class="chart-ttl">חבילת גלישה</div>
+                            <div class="usage_row cht-don">
+                                <label ng-if="displayAbs.value==false" class="rel-val"><b>{{useditem.used[0].relValGB }}%</b><br/></label>
+                                <label ng-if="displayAbs.value==true" class="GB"><b>{{useditem.used[0].absValGB}}</b> <b-1>GB</b-1><br/>מתוך<br/>{{useditem.used[0].GB }} GB</label>
+                                <div id="GB" class="donut" data-rel="{{useditem.used[0].relValGB }}"></div>
+                            </div>
+                        </div>
+                        <div ng-if="useditem.used[0].relValMin!=''">
+                            <div class="chart-ttl">דקות שיחה</div>
+                            <div class="usage_row cht-don">
+                                <label ng-if="displayAbs.value==false" class="rel-val"><b>{{useditem.used[0].relValMin }}%</b></label>
+                                <label ng-if="displayAbs.value==true" class="GB"><b>{{useditem.used[0].absValMin}}</b><br/>מתוך<br/>{{useditem.used[0].Min }}</label>
+                                <div id="Min" class="donut Min" data-rel="{{ useditem.used[0].relValMin }}"></div>
+                            </div >
+                        </div>
+                        <div ng-if="useditem.used[0].relValSms!=''">
+                            <div class="chart-ttl"> SMS</div>
+                            <div class="usage_row cht-don">
+                                <label ng-if="displayAbs.value==false" class="rel-val"><b>{{useditem.used[0].relValSms }}%</b></label>
+                                <label ng-if="displayAbs.value==true" class="GB"><b>{{useditem.used[0].absValSms}}</b><br/>מתוך<br/>{{useditem.used[0].SMS }}</label>
+                                <div id="Sms" class="donut" data-rel="{{ useditem.used[0].relValSms }}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="payment visibledevice" id="payment" ng-cloak>
+            <div class=" wrp-cnt visibledesktop">
+                <label class="hdr use-txt hdr-r"> פירוט חיובים</label>
+                <div class="msgbox-wrp" ng-cloak>
+                    <a ng-if="msg" ng-click="showMB()" tabindex="1" id="msgboxD" dir-enter="showBOX">
+                        <div ng-class="{true:'count-1', false:'count-2'}[msgnum < 10]" data-msgvalue="{{msgnum}}">{{msgnum }}</div>
+                        <div ng-class="{true:'msgbox-m-1', false:'msgbox-m-2'}[msgnum < 10]"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="bill_parts ">
+                <div class="bill_data">
+                    <ul >
+                        <li ng-repeat="item in billselected.bill_parts"  class="payline" ng-cloak>
+                            <div ng-if="item.services.length == null">
+                                <a class="part1" data-part="{{ $index }}"
+                  ng-class="{true:'nonactive'}[item.services.length == null]">                               
+                                    <div class="item_data">
+                                        <div class="paym-row-sh">
+                                            <div  class="item">
+                                                <div class="img-wrp">
+                                                    <div ng-class="{ {{item.paycode}}: true }"></div>
+                                                </div>
+                                            </div>
+                                            <div class="item_big">
+                                                <label  class="title-cat"> {{ item.bill_part_desc }}</label>
+                                                <label  class="subtitle">{{ item.bill_part_msg }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="item_m">
+                                            <div class="wrp-itm">
+                                                <label  class="item_total bld">&#8362; {{ item.bill_part_total }}</label>
+                                                <div class="item-vsml ">
+                                                    <div ng-if="item.submsg!='-1'" class="i-wrp">
+                                                        <info class="i-info" ng-class="{true:'disactive', false:'active c_active'}[getValue($index)]" ng-click="showNewI($index)">i</info>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                
+                </a>
+                   <div class="center">
+                                    <i-info  ng-show="getValue($index)" class="part1-i" on-close="closeI($index)">{{ iMsgs[$index]}}</i-info>
+                                </div>
+                            </div>
+                            <div ng-if="item.services.length > 0">
+                                <a class="part1" data-part="{{ $index }}" tabindex="6+{{$index}}" dir-enter="part1({{ $index }})">                             
+                                    <div class="item_data">
+                                        <div  class="itemPl" ng-on-click="toggleDisplay($index)">
+                                            <label class="item-sml" ng-class="{true:'c_active'}[item.services.length > 0 ]"><iplus class="plus" ></iplus></label>
+                                        </div>
+                                        <div class="paym-row">
+                                            <div  class="item">
+                                                <div class="img-wrp">
+                                                    <div ng-class="{ {{item.paycode}}: true }"></div>
+                                                </div>
+                                            </div>
+                                            <div class="item_big">
+                                                <label  class="title-cat"> {{ item.bill_part_desc }}</label>
+                                                <label  class="subtitle">{{ item.bill_part_msg }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="item_m">
+                                            <div class="wrp-itm">
+                                                <label  class="item_total bld">&#8362; {{ item.bill_part_total }} </label>
+                                                <div class="item-vsml ">
+                                                    <div ng-if="item.submsg!='-1'" class="i-wrp">
+                                                         <info class="i-info" ng-class="{true:'disactive', false:'active c_active'}[getValue($index)]" ng-click="showNewI($index)">i</info>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                 <div class="center">
+                                    <i-info  ng-show="getValue($index)" class="part1-i" on-close="closeI($index)">{{ iMsgs[$index]}}</i-info>
+                                </div>    
+                                   <secdiv ng-if="partTypes[$index] == 'regular'" class="part2 hide">
+                                    <div class="part2_data ">
+                                        <div class="data header">
+                                            <div class="item_l title-r ">תיאור</div>
+                                            <div class="item_s title" ng-class="{true:'const-ttl', false:'adds-ttl'}[item.paycode == 'pcn']"></div>
+                                            <div class="item_s title padT">סה"כ לתשלום</div>
+                                        </div>
+                                        <div class="data data_row"  ng-repeat="servitem in item.services">
+                                            <div class="item_l ">{{ servitem.name }}</div>
+                                            <div class="item_s cntr">{{ servitem.rate }}</div>
+                                            <div class="item_s cntr bld">{{ servitem.total }} </div>
+                                        </div>
+                                    </div>
+                                    <div class="data-total-cnt">
+                                        <div class="data_total">
+                                            <div class="item_l ">סה''כ {{ item.bill_part_desc }} כולל מע''מ</div>
+                                            <div class="item_s lft">&#8362; {{ item.bill_part_total }} </div>
+                                        </div>
+                                    </div>
+                                </secdiv>
+                                <secdiv ng-if="partTypes[$index] == 'simple'" class="part2 hide">
+                                    <div class="part2_data ">
+                                        <div class="data header">
+                                            <div class="item_l BC title-r ">תיאור</div>
+                                            <div class="item_s title padT">סה"כ לתשלום</div>
+                                        </div>
+                                        <div class="data data_row"  ng-repeat="servitem in item.services">
+                                            <div class="item_l_si BC">{{ servitem.name }}</div>
+                                            <div class="item_s cntr bld">{{ servitem.total }} </div>
+                                        </div>
+                                    </div>
+                                    <div class="data-total-cnt">
+                                        <div class="data_total">
+                                            <div class="item_l ">סה''כ {{ item.bill_part_desc }} כולל מע''מ</div>
+                                            <div class="item_s lft">&#8362; {{ item.bill_part_total }} </div>
+                                        </div>
+                                    </div>
+                                </secdiv>
+                                <secdiv ng-if="partTypes[$index] == 'cloud'" class="part2 hide">
+                                    <div class="part2_data ">
+                                        <div class="data header">
+                                            <div class="item_l title-r ">תיאור</div>
+                                            <div class="item_s title">תעריף</div>
+                                            <div class="item_s_cl title">כמות לחיוב קבוע</div>
+                                            <div class="item_s title padT">סה"כ לתשלום</div>
+                                        </div>
+                                        <div class="data data_row"  ng-repeat="servitem in item.services">
+                                            <div class="item_l ">{{ servitem.name }}</div>
+                                            <div class="item_s ">{{ servitem.rate }}</div>
+                                            <div class="item_s_cl ">{{ servitem.constpay }}</div>
+                                            <div class="item_s cntr bld">{{ servitem.total }} </div>
+                                        </div>
+                                    </div>
+                                    <div class="data-total-cnt">
+                                        <div class="data_total">
+                                            <div class="item_l ">סה''כ {{ item.bill_part_desc }} כולל מע''מ</div>
+                                            <div class="item_s lft">&#8362; {{ item.bill_part_total }} </div>
+                                        </div>
+                                    </div>
+                                </secdiv>
+                         
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+<section class="main-content">
+    <section class="add_act visibledevice" id="add_act">
+            <div class="use-txt hdr-c visibledesktop "> פעולות ומידע בשירות עצמי </div>
+            <section class="act-content">
+                <ul>
+                    <li>
+                        <a href="https://urldefense.com/v3/__https://www.pelephone.co.il/digital/login.do?u=subscriberDetails__;!!ArZwysmuupPR!7q9HwdXzYeChT8Sj_xIwT628ZrBKDF3N7cD7uXA9dbyiR_RftxIkWGBSv-ibx-g$__;!!ArZwysmuupPR!9qcFWViiLUTF-8UYwL-sHc7Ei_WcAi2U3NGilVqb3ej4KObmBsHRX8jXjO5f9_k$">
+                            <div class="act" >
+                                <div class="icon img-wrp icon_det"></div>
+                                <label class="icon row"> עדכון פרטים אישיים</label></div>
+                        </a>
+                    </li>
+                    <li ><a href="https://urldefense.com/v3/__https://www.pelephone.co.il/digital/login.do?u=changePymCard__;!!ArZwysmuupPR!7q9HwdXzYeChT8Sj_xIwT628ZrBKDF3N7cD7uXA9dbyiR_RftxIkWGBSC3nngWU$__;!!ArZwysmuupPR!9qcFWViiLUTF-8UYwL-sHc7Ei_WcAi2U3NGilVqb3ej4KObmBsHRX8jXunPXfIM$">
+                        <div class="act">
+                            <div class="icon img-wrp icon_paym"></div>
+                            <label class="icon row">עדכון אמצעי תשלום</label></div>
+                    </a></li>
+                    <li ><a href="https://urldefense.com/v3/__https://www.pelephone.co.il/digital/login.do?u=userServiceDetails__;!!ArZwysmuupPR!7q9HwdXzYeChT8Sj_xIwT628ZrBKDF3N7cD7uXA9dbyiR_RftxIkWGBSNYKKeoc$__;!!ArZwysmuupPR!9qcFWViiLUTF-8UYwL-sHc7Ei_WcAi2U3NGilVqb3ej4KObmBsHRX8jXuM2S8NM$">
+                        <div class="act">
+                            <div class="icon img-wrp icon_masl"></div>
+                            <label class="icon row">פרטי המסלול שלי</label></div>
+                    </a></li>
+          <li ><a href="https://urldefense.com/v3/__https://www.pelephone.co.il/digital/login.do?u=invoiceArchive__;!!ArZwysmuupPR!9qcFWViiLUTF-8UYwL-sHc7Ei_WcAi2U3NGilVqb3ej4KObmBsHRX8jXm72ZXag$">
+                        <div class="act">
+                            <div class="icon img-wrp icon_bills"></div>
+                            <label class="icon row">חשבוניות אחרונות</label></div>
+                    </a></li>
+                    <li ><a id="addMsg"
+                            dir-enter="addInfo"
+                            ng-click="showAMB()">
+                        <div class="act">
+                            <div class="icon img-wrp icon_add_info"></div>
+                            <label class="icon row">מידע נוסף אודות חשבונית דיגיטלית</label></div>
+                    </a></li>
+          </ul>
+            </section>
+        </section>
+    <section class="total_bill all_total " ng-cloak>
+        <div class="bill_total dark_blue">
+            <div class="total_row" ng-if="billselected.subsum.length > 0" >
+                <div class="total_desc">הפרשי עיגול </div>
+                <div class="total_val ">
+                    <span class="subsum W">{{ billselected.subsum }}</span>
+                </div>
+            </div>
+            <div class="total_row ">
+                <div class=" total_desc">
+                    סה''כ חשבונית נוכחית כולל מע''מ
+                </div>
+                <div class="total_val">
+                    <span class="spr W">&#8362; {{ billselected.total }} </span>
+                    <span class="small-v"><div class="lineAft"></div></span>
+                </div>
+            </div>
+        </div>
+
+            <!-- div class="payment_total dark_blue">
+                  <div ng-if="billselected.subsum.length > 0" class="payment_total_rowI ">
+                        <div class="payment_total_descI">הפרשי עיגול </div>
+                        <div class="payment_total_vI ">
+                             <span class="subsum">{{ billselected.subsum }}</span>
+                        </div>
+                  </div>
+                <div class="payment_total_rowT ">
+                    <div class=" payment_total_desc ">
+                        סה''כ חשבונית נוכחית כולל מע''מ
+                    </div>
+                     <div class="payment_total_v">
+                        <span class="spr">&#8362; {{ billselected.total }} </span>
+                        <span class="small-v">
+                                <div class="lineAft" ></div>
+                            </span>
+                    </div>
+                </div>
+            </div---->
+          <div ng-if="addmsgInd" class="payment_total ">
+                    <div class="add_msg" ng-bind-html="addmsg"></div>
+          </div>
+      </section>
+</section>
+</article>
+<div bill-data="bill-parts"  style="display: none" id="bill_total">
+    {
+    "bill": [
+    {
+    "index": "0",
+    "subsciber": "כל המנויים",
+    "total": "1,989.11",
+    "subsum": "0.02",
+    "addmsg": "<strong>בנוסף, יחוייב חשבונך ביתרת תשלומים חודשיים עבור מכשיר/ים ו/או אביזר/ים בסך 43.78 ש''ח.  הסכום מעודכן נכון ליום הפקת החשבונית.</strong>\n\nפורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "1,400.02",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "70.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "648.00",
+    "bill_part_desc": "חיובים חד פעמיים",
+    "bill_part_msg": "חיוב בגין פעילות חד פעמית",
+    "paycode": "eqip",
+
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "74.64",
+    "bill_part_desc": "Cloudit - פתרונות מחשוב ענן לעסקים",
+    "bill_part_msg": "חיוב בגין שרות cloudit",
+    "paycode": "onep",
+
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-203.58",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "להלן המנויים שהצטרפו לחבילה ''חו''ל מושלמת 60 יום'' מחיר החבילה 499 ש''ח כמות יחידות כלולות  דקות שיחה \n נכנסות / יוצאות: 600. כמות הודעות SMS: בסך 600. תעריף דקת שיחה יוצאת / דקת שיחה נכנסת / הודעת SMS מעבר \n ליחידות הכלולות: 1.90 ש''ח. תעריף דקת שיחה מקומית / דקת שיחה בינלאומית: 4.90 ש''ח. נפח גלישה כלול 35GB \n לגלישה סלולארית במדינות נבחרות-נפח העברת נתונים בסיסי של 34GB וכן נפח נוסף של 1GB - סה''כ 35GB. מידע נוסף \n בהמשך הנספח. גלישה בחו''ל באפליקציות מובילות ללא צריכה מנפח הגלישה שבחבילה: Facebook, Waze, \n Snapchat, Instagram, WhatsApp, Google Maps, Tripadvisor, YouTube, Netflix. השימוש באפליקציות אלו במדינות \n הנבחרות אינו צורך מנפח הגלישה הכלול בחבילה כל עוד החבילה בתוקף ונותר נפח גלישה לניצול. אם הינך לקוח עסקי \n הפתוח לגלישה סלולארית בחו''ל, בסיום נפח הגלישה הכלול בחבילה תיכנס לתוקף תכנית חו''ל והגלישה תימשך בתעריף \n של 1 ש''ח ל- 1MB עד לסיום תוקף התכנית ולאחר מכן לפי מחירון פלאפון חו''ל. החבילה והתכנית בתוקף ל- 60 יום \n ממועד תחילת תוקף החבילה. \n מנוי 0545670727 הצטרף בתאריך 15/09/2020, החבילה תכנס לתוקף בתאריך 16/09/2020 בשעה 00:00. \n להלן המנויים שהצטרפו לחבילה ''חו''ל מושלמת 60 יום - במבצע'' מחיר החבילה 149 ש''ח כמות יחידות כלולות  דקות \n שיחה נכנסות / יוצאות: 600. כמות הודעות SMS: בסך 600. תעריף דקת שיחה יוצאת / דקת שיחה נכנסת / הודעת SMS \n מעבר ליחידות הכלולות: 1.90 ש''ח. תעריף דקת שיחה מקומית / דקת שיחה בינלאומית: 4.90 ש''ח. נפח גלישה כלול \n 35GB לגלישה סלולארית במדינות נבחרות-נפח העברת נתונים בסיסי של 34GB וכן נפח נוסף של 1GB - סה''כ 35GB. מידע \n נוסף בהמשך הנספח. גלישה בחו''ל באפליקציות מובילות ללא צריכה מנפח הגלישה שבחבילה: \n Facebook, Waze, Snapchat, Instagram, WhatsApp, Google Maps, Tripadvisor, YouTube, Netflix. השימוש \n באפליקציות אלו במדינות הנבחרות אינו צורך מנפח הגלישה הכלול בחבילה כל עוד החבילה בתוקף ונותר נפח גלישה \n לניצול. אם הינך לקוח עסקי הפתוח לגלישה סלולארית בחו''ל, בסיום נפח הגלישה הכלול בחבילה תיכנס לתוקף תכנית \n חו''ל והגלישה תימשך בתעריף של 1 ש''ח ל- 1MB עד לסיום תוקף התכנית ולאחר מכן לפי מחירון פלאפון חו''ל. החבילה \n והתכנית בתוקף ל- 60 יום ממועד תחילת תוקף החבילה. \n מנוי 0545670732 הצטרף בתאריך 16/09/2020, החבילה תכנס לתוקף בתאריך 16/09/2020 בשעה 00:00. \n החיוב עבור שיחות בחול מבוצע לפי יחידות זמן של 60 שניות. החיוב עבור גלישה בחול מבוצע לפי מקטעים של  K100.",
+    "title": ""
+    },
+    {
+    "msg": "לידיעתך, בתאריך 07/10/2020 סך התשלום שהתקבל עבור חיוב קודם הוא 2128.39 ₪ באמצעי התשלום המעודכן אצלנו. רק \n במידה והתשלום כובד זהו אישור סופי.",
+    "title": ""
+    }
+    ]
+    }
+    ,
+    {
+    "index": "1",
+    "subsciber": "לקוח",
+    "total": "128.44",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "53.80",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "שירות תיקונים  -  לקוח פלאפון 2 למספר אלקטרוני 356929070176730",
+    "rate": "26.90",
+    "constpay":"",
+    "total": "26.90"
+    },
+    {
+    "name": "שירות תיקונים פלאפון למספר אלקטרוני 356929070019849",
+    "rate": "26.90",
+    "constpay":"",
+    "total": "26.90"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "74.64",
+    "bill_part_desc": "Cloudit - פתרונות מחשוב ענן לעסקים",
+    "bill_part_msg": "חיוב בגין שרות cloudit",
+    "paycode": "onep",
+    "services": [
+    {
+    "name": "שירות MS: Microsoft 365 Apps for Business מ 16-09-20  עבור תקופה מ 16/09/20 עד 16/10/20",
+    "rate": "37.32",
+    "constpay":"1",
+    "total": "37.32"
+    },
+    {
+    "name": "שירות MS: אופיס 365 Business pelephone מ 16-09-2020  עבור תקופה מ 16/09/20 עד 16/10/20",
+    "rate": "37.32",
+    "constpay":"1",
+    "total": "37.32"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+
+    }
+    ,
+    {
+    "index": "2",
+    "subsciber": "050-2888914",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "3.882",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "3",
+    "subsciber": "050-2888916",
+    "total": "58.38",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "4",
+    "subsciber": "050-2888917",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "199.413",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "5",
+    "subsciber": "050-4343281",
+    "total": "13.33",
+    "subsum": "0.01",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "13.32",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone Car Plus New עבור 28 ימים מ 15/09/20 עד 12/10/20",
+    "rate": "9.99",
+    "constpay":"",
+    "total": "9.32"
+    }
+    ],
+    "submsg": " - בתאריך 10/9/2020  בוטל שירות Pelephone Car Plus New למנוי 0504343281."
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 5/12/2018. החל מתאריך 4/12/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "6",
+    "subsciber": "050-4882807",
+    "total": "58.38",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי אלקטרוני 012850004776807",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "7",
+    "subsciber": "050-7307694",
+    "total": "13.99",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "13.99",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone Car Plus New",
+    "rate": "9.99",
+    "constpay":"",
+    "total": "9.99"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "0.672",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 5/5/2019. החל מתאריך 4/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "8",
+    "subsciber": "050-7427479",
+    "total": "13.99",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "13.99",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone Car Plus New",
+    "rate": "9.99",
+    "constpay":"",
+    "total": "9.99"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "משלוח הודעה לשירות תוכן חיצוני",
+    "rate": "10:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "12",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "75.545",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 6/5/2019. החל מתאריך 5/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "9",
+    "subsciber": "050-7427480",
+    "total": "13.99",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "13.99",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone Car Plus New",
+    "rate": "9.99",
+    "constpay":"",
+    "total": "9.99"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "משלוח הודעה לשירות תוכן חיצוני",
+    "rate": "27:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "27",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "2662.299",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 6/5/2019. החל מתאריך 5/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "10",
+    "subsciber": "050-7427481",
+    "total": "4.00",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "4.00",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 6/5/2019. החל מתאריך 5/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "11",
+    "subsciber": "050-7427482",
+    "total": "13.99",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "13.99",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone Car Plus New",
+    "rate": "9.99",
+    "constpay":"",
+    "total": "9.99"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "משלוח הודעה לשירות תוכן חיצוני",
+    "rate": "18:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "18",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "577.110",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 6/5/2019. החל מתאריך 5/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "12",
+    "subsciber": "050-7427483",
+    "total": "4.00",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "4.00",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 6/5/2019. החל מתאריך 5/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "13",
+    "subsciber": "050-7427487",
+    "total": "13.99",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "13.99",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "4.00",
+    "constpay":"",
+    "total": "4.00"
+    },
+    {
+    "name": "חבילת גלישה 2GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SOBD",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone Car Plus New",
+    "rate": "9.99",
+    "constpay":"",
+    "total": "9.99"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "משלוח הודעה לשירות תוכן חיצוני",
+    "rate": "7:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "7",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "1.208",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 3.42 ש''ח. התעריפים בתוקף במשך 36 החודשים הראשונים החל מהחודש ה -  37: 11.96 ש''ח, תעריף דקת שיחה 76.06 אג', החבילה כוללת נפח העברת נתונים חודשי של 2GB (''נפח הגלישה הכלול''). (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 6/5/2019. החל מתאריך 5/5/2022 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "14",
+    "subsciber": "054-4713372",
+    "total": "68.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "68.28",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פלאפון מספר אלקטרוני 353336074524118",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone eSIM (מספר אחד)",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.40",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "1022:09",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "משלוח הודעה לשירות תוכן חיצוני",
+    "rate": "1:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "5",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות אל בזק",
+    "rate": "1",
+    "constpay":"",
+    "total": "0.40"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "4374.576",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 14/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "15",
+    "subsciber": "054-5670724",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פלאפון אלקטרוני 866226033727193",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "1173:55",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "49.361",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "16",
+    "subsciber": "054-5670725",
+    "total": "65.01",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "18.33",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה ג'וואל",
+    "rate": "6:44",
+    "constpay":"",
+    "total": "10.78"
+    },
+    {
+    "name": "דקות שיחה לווטאניה",
+    "rate": "0:28",
+    "constpay":"",
+    "total": "0.75"
+    },
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "42:11",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "429",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת הודעת MMS (תמונה)",
+    "rate": "3",
+    "constpay":"",
+    "total": "1.80"
+    },
+    {
+    "name": "שליחת הודעת MMS (וידאו)",
+    "rate": "1",
+    "constpay":"",
+    "total": "1.50"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות אל בזק",
+    "rate": "2",
+    "constpay":"",
+    "total": "0.80"
+    },
+    {
+    "name": "שליחת SMS לג'וואל",
+    "rate": "3",
+    "constpay":"",
+    "total": "2.70"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "8908.126",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "17",
+    "subsciber": "054-5670727",
+    "total": "557.38",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי מספר אלקטרוני 3549011107782",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "2:53",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "גלישה באפליקציות מובילות בחו''ל MB אתיופיה",
+    "rate": "0.000",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "גלישה באפליקציות מובילות בחו''ל MB גאנה",
+    "rate": "0.000",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "יחידות כלולות - SMS יוצא בחו''ל",
+    "rate": "3",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות כלולות  אתיופיה",
+    "rate": "3:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות כלולות  גאנה",
+    "rate": "5:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות כלולות  גאנה",
+    "rate": "45:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישה ב MB  אתיופיה",
+    "rate": "7.226",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישה ב MB  גאנה",
+    "rate": "21644.628",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SMS נכנס",
+    "rate": "42",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "* חלק מהחיובים עבור השימושים בחו''ל אינם מחויבים מע''מ.",
+    "rate": "",
+    "constpay":"",
+    "total": ""
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "499.00",
+    "bill_part_desc": "חיובים חד פעמיים",
+    "bill_part_msg": "חיוב בגין פעילות חד פעמית",
+    "paycode": "eqip",
+    "services": [
+    {
+    "name": "חיוב בגין חו''ל מושלמת 60 יום ללא חיוב במע''מ",
+    "rate": "",
+    "constpay":"",
+    "total": "499.00"
+    }
+    ],
+    "submsg": " - בתאריך 16/9/2020 מנוי 0545670727 חוייב על חו&bdquo;ל מושלמת 60 יום"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "18",
+    "subsciber": "054-5670728",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסק",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone CYBER לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פלאפון אלקטרוני 358757048083300",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "13:08",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "1934.811",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 3000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 3000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 29 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/10/2019. החל מתאריך 14/10/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "19",
+    "subsciber": "054-5670729",
+    "total": "96.17",
+    "subsum": "-0.01",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "107.88",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי A5  מספר אלקטרוני 35691207127",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "תוספת ראשונה נפח גלישה גמיש",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    },
+    {
+    "name": "תוספת שניה נפח גלישה גמיש",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    },
+    {
+    "name": "תוספת שלישית נפח גלישה גמיש",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    },
+    {
+    "name": "תוספת רביעית נפח גלישה גמיש",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    },
+    {
+    "name": "תוספת חמישית נפח גלישה גמיש",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    }
+    ],
+    "submsg": " - בתאריך  1/10/2020 מנוי  0545670729 הצטרף לשירות UPSALE1 - הרחבת גלישה 2GB.\n - בתאריך  2/10/2020 מנוי  0545670729 הצטרף לשירות UPSALE2 - הרחבת גלישה 2GB.\n - בתאריך  9/10/2020 מנוי  0545670729 הצטרף לשירות UPSALE4 - הרחבת גלישה 2GB.\n - בתאריך  10/10/2020 מנוי  0545670729 הצטרף לשירות UPSALE5 - הרחבת גלישה 2GB.\n - בתאריך  6/10/2020 מנוי  0545670729 הצטרף לשירות UPSALE3 - הרחבת גלישה 2GB."
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "529:49",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "5",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט ב -  MB*",
+    "rate": "48.048",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "30685.280",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט ב -  MB מ - 0.0019 עד 976562.498 MB",
+    "rate": "0.000",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": " - *שיחות בתעריף משתנה"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 14/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "20",
+    "subsciber": "054-5670730",
+    "total": "47.51",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פלאפון Green מספר אלקטרוני 3546511016977",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.83",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה ג'וואל",
+    "rate": "0:31",
+    "constpay":"",
+    "total": "0.83"
+    },
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "980:38",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "6",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "5355.837",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "21",
+    "subsciber": "054-5670731",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסק",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone CYBER לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי מספר אלקטרוני 3537480639800",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "3458.165",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 3000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 3000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 29 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/10/2019. החל מתאריך 14/10/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "22",
+    "subsciber": "054-5670732",
+    "total": "205.49",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "16.79",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 90MB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "תוספת ראשונה נפח גלישה גמיש",
+    "rate": "6.89",
+    "constpay":"",
+    "total": "6.89"
+    }
+    ],
+    "submsg": " - בתאריך  16/9/2020 מנוי  0545670732 הצטרף לשירות UPSALE1 - הרחבת גלישה 1GB."
+    }
+    ,
+    {
+    "bill_part_total": "39.70",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "7:36",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "גלישה באפליקציות מובילות בחו''ל MB אתיופיה",
+    "rate": "0.000",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "גלישה באפליקציות מובילות בחו''ל MB גאנה",
+    "rate": "0.000",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שיחה יוצאת בינלאומית  גאנה",
+    "rate": "1:00",
+    "constpay":"",
+    "total": "4.90"
+    },
+    {
+    "name": "שיחה יוצאת מקומית  גאנה",
+    "rate": "2:00",
+    "constpay":"",
+    "total": "9.80"
+    },
+    {
+    "name": "יחידות כלולות - SMS יוצא בחו''ל",
+    "rate": "6",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות כלולות  אתיופיה",
+    "rate": "7:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות כלולות  גאנה",
+    "rate": "190:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות כלולות  גאנה",
+    "rate": "133:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישה ב MB  אתיופיה",
+    "rate": "5.566",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישה ב MB  גאנה",
+    "rate": "9281.347",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שיחה יוצאת לישראל  גאנה",
+    "rate": "1:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "SMS נכנס",
+    "rate": "42",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פלאפון Travel: תשלום חד פעמי לנסיעה",
+    "rate": "1",
+    "constpay":"",
+    "total": "25.00"
+    },
+    {
+    "name": "דקת שיחה לישראל  אתיופיה",
+    "rate": "5:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "370.964",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "* חלק מהחיובים עבור השימושים בחו''ל אינם מחויבים מע''מ.",
+    "rate": "",
+    "constpay":"",
+    "total": ""
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "149.00",
+    "bill_part_desc": "חיובים חד פעמיים",
+    "bill_part_msg": "חיוב בגין פעילות חד פעמית",
+    "paycode": "eqip",
+    "services": [
+    {
+    "name": "חיוב בגין חו''ל מושלמת 60 יום  -  במבצע ללא חיוב במע''מ",
+    "rate": "",
+    "constpay":"",
+    "total": "149.00"
+    }
+    ],
+    "submsg": " - בתאריך 16/9/2020 מנוי 0545670732 חוייב על חו&bdquo;ל מושלמת 60 יום - במבצע"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 8.46 ש''ח, עד 90 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 90 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 16.23 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/5/2016. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "23",
+    "subsciber": "054-5670733",
+    "total": "57.42",
+    "subsum": "0.02",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "78.27",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שרות PeleLine",
+    "rate": "19.89",
+    "constpay":"",
+    "total": "19.89"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי מספר אלקטרוני 3546511016389",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "10.72",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה ג'וואל",
+    "rate": "6:36",
+    "constpay":"",
+    "total": "10.56"
+    },
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "533:13",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "4",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "3965.835",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שיחות וידאו",
+    "rate": "0:17",
+    "constpay":"",
+    "total": "0.17"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-31.59",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    },
+    {
+    "name": "הנחת שלוחה",
+    "rate": "",
+    "constpay":"",
+    "total": "-19.89"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "24",
+    "subsciber": "054-5670734",
+    "total": "68.32",
+    "subsum": "0.01",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "68.28",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שרות המספר הכפול",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.03",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "362:50",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "משלוח הודעה לשירות תוכן חיצוני",
+    "rate": "1:00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "23",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "12663.158",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שיחות וידאו",
+    "rate": "0:03",
+    "constpay":"",
+    "total": "0.03"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 14/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "25",
+    "subsciber": "054-5670740",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "65:24",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "1",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "1963.819",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "26",
+    "subsciber": "054-5670741",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "58.38",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי מספר אלקטרוני 355856103510653",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "253:17",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "13",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "24.590",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 14/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "27",
+    "subsciber": "054-5670750",
+    "total": "46.68",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "78.27",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שרות PeleLine",
+    "rate": "19.89",
+    "constpay":"",
+    "total": "19.89"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פלאפון אלקטרוני 354846024272419",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "499:37",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "17087.532",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-31.59",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    },
+    {
+    "name": "הנחת שלוחה",
+    "rate": "",
+    "constpay":"",
+    "total": "-19.89"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 15/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "28",
+    "subsciber": "054-8006799",
+    "total": "56.58",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "68.28",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת הרחבת נפח גלישה 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי Gold  מספר אלקטרוני 35390810713",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone eSIM (מספר אחד)",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה",
+    "rate": "0:35",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "703:57",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות שיחה ללא חיוב",
+    "rate": "41:06",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "6",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "3",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "4299.833",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 14/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+    ,
+    {
+    "index": "29",
+    "subsciber": "054-9080005",
+    "total": "56.58",
+    "subsum": "",
+    "addmsg": "פורמט חשבונית אונליין הינו כלי עזר בלבד. החשבונית המחייבת היא החשבונית החודשית ובמקרה של סתירה או אי התאמה בין האמור בחשבונית האונליין לבין האמור בחשבונית החיוב החודשית, ייגבר האמור בחשבונית החודשית.",
+    "bill_parts": [
+    {
+    "bill_part_total": "68.28",
+    "bill_part_desc": "חיובים קבועים",
+    "bill_part_msg": "חיוב בגין שרותים בתשלום חודשי קבוע",
+    "paycode": "pcn",
+    "services": [
+    {
+    "name": "תשלום חודשי קבוע (דמי מנוי)",
+    "rate": "58.38",
+    "constpay":"",
+    "total": "58.38"
+    },
+    {
+    "name": "פלאפון CYBER BASIC לגלישה בטוחה ברשת",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת גלישה בנפח 20GB",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "פתיחה לקבלת מידע שיווקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "חבילת ALL IN לעסקים",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "מהירות מקסימאלית ברשת פלאפון",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות פקס למייל",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות תיקונים Basic ממלאי פרטי Green מספר אלקטרוני 35392510228",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "הטבת שיר בהמתנה ג'ינגל עסקי",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שירות Pelephone Cloud",
+    "rate": "0.00",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "Pelephone eSIM (מספר אחד)",
+    "rate": "9.90",
+    "constpay":"",
+    "total": "9.90"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "0.00",
+    "bill_part_desc": "חיובים משתנים",
+    "bill_part_msg": "חיוב על פי שימוש",
+    "paycode": "pch",
+    "services": [
+    {
+    "name": "דקות שיחה",
+    "rate": "1:25",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "דקות שיחה כלולות",
+    "rate": "1746:45",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "שליחת SMS  -  יחידות כלולות",
+    "rate": "6",
+    "constpay":"",
+    "total": "0.00"
+    },
+    {
+    "name": "נפח גלישת אינטרנט כלול ב -  MB",
+    "rate": "15196.897",
+    "constpay":"",
+    "total": "0.00"
+    }
+    ],
+    "submsg": "-1"
+    }
+    ,
+    {
+    "bill_part_total": "-11.70",
+    "bill_part_desc": "הטבות/זיכויים",
+    "bill_part_msg": "הטבות/הנחות שפלאפון מעניקה לכם",
+    "paycode": "disc",
+    "services": [
+    {
+    "name": "הטבה שירותית",
+    "rate": "",
+    "constpay":"",
+    "total": "-11.70"
+    }
+    ],
+    "submsg": "-1"
+    }
+
+    ]
+
+    ,
+    "msgbox": [
+    {
+    "msg": "תשלום חודשי קבוע 49.9 ש''ח. התעריפים בתוקף במשך 24 החודשים הראשונים החל מהחודש ה -  25: 69.9 ש''ח, עד 5000 דקות שיחה אל מנויי מפעילי תקשורת ישראלים, בישראל ועד 5000 הודעות SMS אל מנויי מפעילים סלולאריים ישראלים, בישראל. הדקות וה - SMS בשימוש אישי, סביר והוגן כהגדרתו בנספח. בסיום מכסת הדקות ימשיך השירות בתשלום כדלקמן:, תעריף דקת שיחה/הודעת SMS מעבר לכמות זו ובשימוש לא סביר והוגן 19 אג' לפירוט היעדים שאינם נכללים במכסות הדקות וההודעות שלעיל והחיוג אליהם עיין בהמשך הנספח. (התעריפים אינם כוללים מע''מ). \n המידע מתייחס לפרטי התוכנית שבתוקף החל מ - 15/1/2019. החל מתאריך 14/1/2021 יחול שינוי בתעריפים לתעריפים הרלוונטיים לתקופה שלאחר התקופה הראשונית כמפורט לעיל. \n ניתן לעיין במידע המלא בהסכם.",
+    "title": "עיקרי מסלול למנוי"
+    }
+    ]
+    }
+
+    ]
+    }
+</div>
+<div style="display: none" id="add_info">
+לפניות שירות בנושא תקלות משביתות/אובדן/פלאפון חו"ל 24 שעות ביממה ולפניות שירות אחרות בימים א'-ה' בין השעות 8:00-18:00 (ובימי שישי/ערבי חג/ימי חול המועד עד 13:00 ) יש לחייג 166* שיחת חינם ממכשיר הפלאפון או 1800-050-166 מכל מכשיר טלפון בישראל. ככל שקיים פער בין סכום החיוב הכולל לבין שורות סיכום הביניים בפרוט החשבון, מקורו בכך שהחיוב בפועל מבוצע ברמת דיוק גבוהה יותר
+
+איתור מספרי טלפון של לקוחות כל החברות, ניתן לבצע, ללא תשלום, באתר פלאפון &#8250; מידע ותמיכה &#8250; מידע כללי &#8250; איתור מספרים סלולריים. בקשה להפסקה או ניתוק שירות ופניות לנציב התלונות לברור והכרעה בחילוקי דעות בקשר לפירוש וביצוע ההסכמים שבינך לבין פלאפון ולחשבוניות שהגשנו לך, ניתן לשלוח בפקס 03-5728045 , בדואר רשום לשלמה שמלצר 94, קרית אריה, פתח תקווה, בדוא"ל  contact@pelephone.co.il  (בבקשות באמצעי זה יש לציין דוא"ל למשלוח הודעת אישור הבקשה),  ובאתר פלאפון <a href="https://urldefense.com/v3/__http://www.pelephone.co.il__;!!ArZwysmuupPR!-09UeZWGr5etiOuMRG-wMY85OuTFmLDBzd_gCwWN8Ut1y2XTZMVhcv8NDO22hzs$">www.pelephone.co.il</a>  ובבקשה לניתוק/הפסקת שירות ניתן לפנות גם בע"פ במספר שצוין לעיל בפרטי הפניה בנושא תקלות פלאפון פניה משביתות/אובדן/ או במרכז שירות. מפורטת תוגש בציון מס' הפלאפון; שם הלקוח; ובבקשות לניתוק/הפסקת שירות של לקוח פרטי שהינו צרכן ע"פ חוק הגנת הצרכן- יש לציין מס' זהות (בפניה בע"פ יצויין פרט מזהה עליו הוסכם) ושל לקוח עסקי- פרט מזהה נוסף. במקרה של חיוב חודשי נמוך מ- 20 ש"ח (או סכום אחר שייקבע מעת לעת) חב' פלאפון עשויה לדחות את החיוב בפועל לחודש/ים הבא/ים. באפשרותך לקבל פירוט בכתב לגבי אופן חישוב החזר/חיוב חד פעמי. לצורך כך או לקבלת מידע נוסף הינך מוזמן לפנות אל מוקד שירות הלקוחות 166*.
+ כל פיגור בתשלום יחויב בריבית והצמדה. החיוב בפועל בגין גלישה (העברת נתונים) נעשה ביחידות KB 1 לתשלום. 
+</div>
+<script type="text/javascript">
+    angular.module('myBill', []);
+</script>
+<script src="js/main.js"></script>
+<script src="js/charts/chartservice.js"></script>
+<script src="js/controllers/BillDetails.js"></script>
+</body>
+</html>

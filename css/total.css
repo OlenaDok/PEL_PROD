@@ -1,0 +1,136 @@
+.total_bill {
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: column ;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+}
+.payment_total {
+    width: 100%;
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: column ;
+    align-items: center;
+    justify-content: left;
+    padding: 0.5em 0 0.5em 0;
+}
+.payment_total_row {
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.payment_total_rowT {
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.payment_total_desc {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 60%;
+    word-wrap: normal;
+    font-weight: normal;
+    line-height: 0.9;
+   /* font-size: 1em;*/
+
+}
+.payment_total_v {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    color: #FFFFFF;
+   /* text-align: left;*/
+  /*  width: 40%;*/
+
+
+  /*  font-size: 25px;*/
+    /*  font-family: SpacerBold; */
+
+
+
+}
+.payment_total_vT {
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-col {
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    width: 35%;
+}
+.payment_total_descT {
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    word-wrap: normal;
+    font-weight: normal;
+
+}
+
+.payment_total_vT {
+ /*   font-size: 1.875em;*/
+
+    font-weight: bold;
+    width: 100%;
+  /*  font-size: 25px; */
+
+    color: #FFFFFF;
+    text-align: center;
+}
+.spr {
+    line-height: 1.2;
+    width: 100%;
+    text-align: center;
+}
+
+
+.all_total {
+    font-family: Spacer;
+}
+
+.blue {
+    color: #DFF1FF;
+    background-color: rgb(11, 105, 186);
+}
+.dark_blue {
+    background-color: #003366;
+    color: #fefefe;
+}
+
+.small-v{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:left;
+    height: min-content;
+    padding: 0;
+
+}
+
+.lineAft123{
+    width: 151px;
+    height: 13px;
+}
+
+.lineAft {
+    display: block;
+    background-image: url("img/line_pic.png");
+    background-repeat: no-repeat;
+    width: 151px;
+    height: 13px;
+    /*  transform: scale(0.8);*/
+}
+
+

@@ -1,0 +1,74 @@
+.add_act {
+    /*  display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;*/
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.act-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+
+}
+.acts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+    /*  padding-right: 15%; */
+
+}
+
+.act {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #2A85D4;
+    font-size: 1.25em;
+    padding-bottom: 0.3em;
+}
+
+
+.icon {
+    margin: 0.35em;
+}
+.icon_det {
+    background-image: url("img/details.png");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 21px;
+}
+
+.icon_paym {
+    background-image: url("img/payment.png");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 16px;
+}
+
+.icon_masl {
+    background-image: url("img/locus.png");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 20px;
+}
+
+.row {
+    width: 50%;
+}
+
+

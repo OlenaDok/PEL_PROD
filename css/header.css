@@ -1,0 +1,165 @@
+.hdr-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #153958;
+    top: 0;
+    padding: 0.75em 0 0.75em 0;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+}
+
+.hdr-row {
+    color: #FFFFFF;
+    text-align: center;
+
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+/*---- customer details ----*/
+
+.cust-det {
+    width: 100%;
+}
+.cust-det-data{
+    position: relative;
+    z-index: 10;
+    /*  display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;*/
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+/*width: 75%; */
+
+}
+
+.wrap-cust-det {
+    width: 100%;
+    display: -webkit-box;  display: -ms-flexbox;  display: -webkit-flex; display: flex;
+    flex-flow: row;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    -webkit-align-content: center;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    -webkit-flex-flow: row;
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+
+    align-items: center;
+
+
+}
+.wrap-hdr {
+    background: transparent;
+    max-height: 7.85em;
+    max-width: 10em;
+    position: relative;
+    z-index: 2;
+    width: 15%;
+
+}
+
+.cust-det-hdr {
+    width: 12.5em;
+    height: 12.5em;
+    top:  -2.5em;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    background-color: #FFFFFF;
+    position: relative;
+    text-anchor: middle;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+.txt-prv {
+    font-size: 1.875em;
+    font-family: SpacerBold;
+    font-weight: bold;
+    color: #2B8FD4;
+    width: min-content;
+    padding-top: 20%;
+  /*  padding-right: 10%; */
+    text-align: right;
+    line-height: 1;
+}
+
+
+.cust-det-ttl {
+    padding-right: 0.75em;
+    width: calc(100% - 0.75em);
+    max-width: 90%;
+    font-size: 1.125em;
+}
+
+.cust-det-row {
+    width: 100%;
+}
+
+.bld {
+   /* font-family: SpacerBold; */
+    font-weight: bold;
+}
+
+
+.cust-det-col {
+    /* width: 33%;*/
+    flex-grow: 1;
+}
+
+
+/*---- collapse customer details ----*/
+input[type='checkbox'] {
+    display: none;
+}
+
+
+.mbl-collaps-button {
+    flex-flow: row;
+    justify-content: space-between;
+    -webkit-flex-flow: row;
+    -ms-flex: border-box;
+    align-items: center;
+}
+.lbl-toggle-arr {
+    vertical-align: middle;
+    color: #FFFFFF;
+    width: 10%;
+}
+
+
+.lbl-toggle-txt {
+    width: 50%;
+   /* padding-right: 1em;*/
+    font-family: SpacerBold;
+}
+
+@media all and (min-device-width: 641px) and (max-device-width: 1119px) {
+    .cust-det-data {
+        width: 65%;
+        padding-top: 1%;
+        padding-right: 8%;
+    }
+
+    .wrap-cust-det {
+        justify-content: flex-start;
+    }
+
+    .cust-det-ttl {
+        width: 75%;
+    }
+    .col-sml-l {
+        width: 45%;
+    }
+    .col-lrg-l {
+        width: 50%;
+    }
+
+
+}
+
