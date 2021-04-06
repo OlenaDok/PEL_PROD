@@ -969,7 +969,7 @@ b-1 {
     -moz-box-pack: center;
     -ms-flex-pack: center;
     -webkit-align-self: center;
-    width: 90%;
+    width: 95%;
     line-height: 0.83em;
     /*
     margin-top: 1em;
@@ -978,7 +978,7 @@ b-1 {
     color: #2A85D4;
     cursor: inherit;
     text-align: left;
-    padding-left: 2%;
+   /* padding-left: 2%;*/
     direction: ltr;
 }
 
